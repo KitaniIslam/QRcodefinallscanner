@@ -1,6 +1,7 @@
 package com.qrcode.alkitani.qrcodefinallscanner;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
     private Button buttonScan;
     Button next ;
     private TextView textViewName, textViewAddress;
-
+    MediaPlayer mp;
 
     //qr code scanner object
     private IntentIntegrator qrScan;
@@ -90,14 +91,13 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         switch (v.getId()){
 
             case R.id.next :
-                Intent intent = new Intent(MainActivity .this, PlayePage.class);
-                startActivity(intent);
+                Intent intentt = new Intent(MainActivity .this, PlayePage.class);
+                startActivity(intentt);
 
                 break;
             case R.id.buttonScan :
                 //initiating the qr code scan
                 qrScan.initiateScan();
-
                 break;
 
         }
